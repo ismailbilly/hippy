@@ -1,8 +1,30 @@
-import React from 'react'
+import {useRef} from 'react'
 
-const AddTask = () => {
+const AddTask = ({socket}) => {
+  const taskRef = useRef()
+ 
+     function handleSubmit(e){
+        e.preventDefault();
+        console.log(taskRef.current.value)
+      
+    }
+ 
   return (
-    <div>AddTask</div>
+   
+    <form className='form__input' onSubmit={handleSubmit}>
+        <label htmlFor='task'>Provide a username</label>
+        <input
+            type='text'
+            name='task'
+            id='task'
+            className='input'
+            required
+            ref={taskRef}
+            
+        />
+        <button className='addTodoBtn'>ADD TASK</button>
+    </form>
+
   )
 }
 
