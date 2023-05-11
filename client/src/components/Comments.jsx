@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 
 const socket = socketIO.connect("http://localhost:5000");
 
-const comments = () => {
+const Comments = () => {
   
     const [comment, setComment] = useState("");
 
@@ -41,4 +41,4 @@ const comments = () => {
   )
 }
 
-export default comments
+export default Comments

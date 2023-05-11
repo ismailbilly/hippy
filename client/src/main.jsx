@@ -8,12 +8,18 @@ import {
 } from "react-router-dom";
 //local imports
 import Login from './components/Login'
-import Comments from './components/Comments'
+import Comments from './components/comments';
 import Tasks from './components/Tasks'
+//import Landings from './components/Landings'
+
 
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <App/>,
+  },
+  {
+    path: "/login",
     element: <Login/>,
   },
   {
@@ -27,7 +33,8 @@ const router = createBrowserRouter([
   {
     path: "/comments/:category/:id",
     element: <Comments/>,
-  }
+  },
+ 
   
 ]);
 ReactDOM.createRoot(document.getElementById('root')).render(

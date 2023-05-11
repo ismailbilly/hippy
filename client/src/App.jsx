@@ -1,9 +1,13 @@
-
+import Sidebar from './components/Sidebar'
+import Main from './components/Main'
 import './App.css'
 
 function App() {
   return (
-    <h1>Hello Naija</h1>
+    <div className="home">
+      <Sidebar />
+      <Main />
+    </div>
   )
 }
 

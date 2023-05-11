@@ -19,8 +19,21 @@ const TasksContainer = ({socket}) => {
 
     function handleDragEnd({destination, source}){
       console.log(destination, source);
+      if(!destination) {return}
+      if(destination.index === source.index &&
+        destination.droppableId === source.droppableId
+        ) {return}
+       //else 
+       socket.emit('taskDragged', {
+        source,
+        destination
+       })
     }
-
+useEffect(()=>{
+    socket.on('tasks', (data)=>{
+        setTasks(data)
+    })
+}, [socket])
 return (
     <div className='container'>
         {/* 

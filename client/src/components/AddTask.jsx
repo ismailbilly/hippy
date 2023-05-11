@@ -5,7 +5,8 @@ const AddTask = ({socket}) => {
  
      function handleSubmit(e){
         e.preventDefault();
-        console.log(taskRef.current.value)
+        socket.emit('createTask', taskRef.current.value)
+        //console.log(taskRef.current.value)
       
     }
  
